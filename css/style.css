@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.intro {
+    height: 100vh;
+}
+
+.showcase {
+    padding-top: 40px;
+    height: 300vh;
+}
+
+.topnav {
+    background-color: rgba(0, 187, 255, 0.59);
+}
+
+.topnav a:hover {
+    background-color: darkgrey;
+    color: black;
+}
+
+.sidenav {
+    background-color: maroon;
+}
+
+.sidenav a {
+    color: white;
+}
+
+.sidenav li:hover {
+    background-color: darkgrey;
+    color: black;
+}
