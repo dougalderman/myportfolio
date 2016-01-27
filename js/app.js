@@ -18,8 +18,8 @@ angular.module('myPortfolio', ['ui.router', 'ngAnimate'])
                 controller: 'projectsCtrl'
         })
         .state('About', {
-  			    templateUrl: 'html/aboutTmpl.html',
-  			    url: '/about',
+  			    templateUrl: 'html/homeTmpl.html',
+  			    url: '/',
                 controller: 'aboutCtrl'
         })
         .state('Resume', {

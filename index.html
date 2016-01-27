@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Doug Alderman Portfolio</title>
+    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.css">
     
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.css">
+   
     <link rel="stylesheet" href="css/style.css">
+    
 </head>
 
 <body id="top" ng-controller="mainCtrl">
@@ -16,30 +19,31 @@
      <div class="navbar-fixed">
         <nav>
             <div class="topnav nav-wrapper">
-                <a href="#" data-activates="mobile-demo" ng-click="showSidenav()" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="right hide-on-small">
+                <span id="dougname" class="brand-logo">Doug S. Alderman</span>
+                <a href="#" data-activates="mobile-demo" class="button-collapse hide-on-small-med-and-up"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-small-med-and-down">
                     <li><a ui-sref="Home">Home</a></li>
-                    <li><a ui-sref="Projects">Projects</a>Projects</li>
+                    <li><a ui-sref="Projects">Projects</a></li>
                     <li><a ui-sref="About">About</a></li>
+                    <li><a ui-sref="Resume">Resume</a></li>
                     <li><a ui-sref="Contact">Contact</a></li>
                 </ul>
-                 <ul id="mobile-demo" ng-hide="hideSidenav" class="sidenav side-nav">
-                    <li><a ng-click="clearSidenav()" ui-sref="Home">Home</a></li>
-                    <li><a ng-click="clearSidenav()" ui-sref="Projects">Projects</a></li>
-                    <li><a ng-click="clearSidenav()" ui-sref="About">About</a></li>
-                    <li><a ng-click="clearSidenav()" ui-sref="Contact">Contact</a></li>
-                    <!--<li ng-click="clearSidenav('Home')">Home</li>
-                    <li ng-click="clearSidenav('Projects')">Projects</li>
-                    <li ng-click="clearSidenav('About')" >About</li>
-                    <li ng-click="clearSidenav('Contact')" >Contact</li>-->
+                 <ul id="mobile-demo" class="sidenav side-nav">
+                    <li><a ui-sref="Home">Home</a></li>
+                    <li><a ui-sref="Projects">Projects</a></li>
+                    <li><a ui-sref="About">About</a></li>
+                    <li><a ui-sref="Resume">Resume</a></li>
+                    <li><a ui-sref="Contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
     </div>
+
            
     <div ui-view></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.js"></script>
+<!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.js"></script> -->
+    <script src="js/materialize.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
     <script src="https://code.angularjs.org/1.4.8/angular-animate.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>

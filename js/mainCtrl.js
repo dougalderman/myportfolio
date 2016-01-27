@@ -3,10 +3,24 @@ angular.module('myPortfolio')
     
     $( document ).ready(function(){
         
-        $scope.hideSidenav = false;
-        $scope.reloadScreen = false;
+   /*     $scope.hideSidenav = false;
+        $scope.reloadScreen = false; */
         
         $('.button-collapse').sideNav();
+        
+    /*    $('.button-collapse').click(function(e) {
+            
+             $('.side-nav').show();
+                    
+        });
+        
+        $('.side-nav').click(function(e) {
+            
+            if( $(e.target).is('a') ) {
+                 $(this).hide();
+            }
+         
+        }); */
         
        /* $('.button-collapse').click(function() {
             $('#mobile-demo').show();
@@ -17,7 +31,7 @@ angular.module('myPortfolio')
             $('#mobile-demo').hide();
         }); */
         
-        $scope.clearSidenav = function(newState) {
+       /*  $scope.clearSidenav = function(newState) {
             $scope.hideSidenav = true;
             $scope.reloadScreen = true;
         }
@@ -25,7 +39,7 @@ angular.module('myPortfolio')
          $scope.showSidenav = function() {
             $('.button-collapse').sideNav();
             $scope.hideSidenav = false;
-         }
+         } */
         
     })
     

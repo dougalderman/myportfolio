@@ -1,9 +1,10 @@
 angular.module('myPortfolio')
 .controller('homeCtrl', function ($scope) {
      
-       if ($scope.reloadScreen) {
+ /*      if ($scope.reloadScreen) {
             location.reload();
             $scope.reloadScreen = false;
        }
-     
+*/
+
 });
