@@ -67,7 +67,8 @@ html, body {
     padding-left: 10px;
 }
 .sidenav {
-    background-color: rgba(128, 12, 0, 0.68);
+ /*   background-color: rgba(128, 12, 0, 0.68); */
+    background-color: rgb(128, 12, 0);
 }
 
 .sidenav a {
@@ -101,19 +102,21 @@ html, body {
 #resume h3 {
     font-family: "Arial";
     font-size: 2.5em;
-    margin-top: 60px;
+    margin-top: 80px;
     color: darkslateblue;
 }
 
 #resume h4 {
     font-family: "Arial";
     font-size: 1.8em;
-    margin-top: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 #resume p {
     font-family: "Times New Roman";
     font-size: 1.4em;
+    margin: 10px 0;
 }
 
 #resume ul {
@@ -125,6 +128,44 @@ html, body {
 
 #resume ul li {
     list-style-type: disc;
+}
+
+#resume .row.columnHeader {
+    font-family: "Arial";
+    font-size: 1.5em;
+    color: rgba(128, 12, 0, 1);
+    margin-bottom: 30px;
+}
+
+#resume .row {
+    margin-bottom: 5px;
+}
+
+#contact .icons {
+    height: 50px;
+    margin: 20px auto;
+}
+
+#contact .icons a {
+    margin-right: 30px;
+}
+
+#contact h3 {
+    font-family: "Arial";
+    font-size: 2.5em;
+    color: darkslateblue;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#contact .button {
+    height: 30px;
+    width: 120px;
+    font-family: Arial;
+    font-size: 1.2em;
+    color: white;
+    background-color: black;
+  
 }
 
 @media only screen and (max-width: 700px) {
