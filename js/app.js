@@ -1,4 +1,4 @@
-angular.module('myPortfolio', ['ui.router', 'ngAnimate'])
+angular.module('myPortfolio', ['ui.router'])
 .config(function ($stateProvider, $urlRouterProvider) {
 
     // routing configuration code
