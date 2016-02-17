@@ -12,10 +12,14 @@ angular.module('myPortfolio', ['ui.router'])
   			    url: '/',
                 controller: 'homeCtrl'
   		})
-      .state('Projects', {
+        .state('Projects', {
   			    templateUrl: 'html/homeTmpl.html',
   			    url: '/',
                 controller: 'projectsCtrl'
+        })
+        .state('Survey_Project', {
+  			    templateUrl: 'html/survey_project.html',
+  			    url: '/survey_project',
         })
         .state('About', {
   			    templateUrl: 'html/homeTmpl.html',

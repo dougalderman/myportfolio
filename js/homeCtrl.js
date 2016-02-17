@@ -6,5 +6,9 @@ angular.module('myPortfolio')
             $scope.reloadScreen = false;
        }
 */
+    
+     $(document).ready(function(){
+        $('.tooltipped').tooltip({delay: 50});
+     });
 
 });
