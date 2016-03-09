@@ -5,26 +5,26 @@
     </div>
     
     <div class="row">
-        <form class="col s12">
+        <form class="col s12" ng-submit="contactForm()">
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="name" type="text" class="validate" required>
+                    <input id="name" type="text" class="validate" ng-model="contact.name" required>
                     <label for="name">Name</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="email" type="email" class="validate" required>
+                    <input id="email" type="email" class="validate" ng-model="contact.email" required>
                     <label for="email" data-error="Invalid" >Email</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="phone" type="tel" class="validate">
+                    <input id="phone" type="tel" class="validate" ng-model="contact.phone">
                     <label for="phone" data-error="Invalid">Phone</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="textarea1" class="validate materialize-textarea"></textarea>
+                    <textarea id="textarea1" class="validate materialize-textarea" ng-model="contact.message"></textarea>
                     <label for="textarea1">Message</label>
                 </div>
             </div>
