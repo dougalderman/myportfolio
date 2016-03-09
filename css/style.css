@@ -188,6 +188,12 @@ html, body {
   
 }
 
+#contact .matchError {
+    color: red;
+    font-weight: bold;
+    font-size: 1em;
+}
+
 @media only screen and (max-width: 700px) {
   .hide-on-small-med-and-down {
     display: none !important;
