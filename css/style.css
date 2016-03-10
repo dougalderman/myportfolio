@@ -83,7 +83,7 @@ html, body {
 }
 
 #projects {
-    height: 600vh;
+ /*   height: 600vh; */
 }
 
 #projects p {
@@ -120,7 +120,7 @@ html, body {
 #resume h3 {
     font-family: "Arial";
     font-size: 2.5em;
-    margin-top: 80px;
+    margin-top: 80px; 
     color: darkslateblue;
 }
 
@@ -159,6 +159,8 @@ html, body {
     margin-bottom: 5px;
 }
 
+
+
 #contact .icons {
     height: 50px;
     margin: 20px auto;
@@ -184,6 +186,12 @@ html, body {
     color: white;
     background-color: black;
   
+}
+
+#contact .matchError {
+    color: red;
+    font-weight: bold;
+    font-size: 1em;
 }
 
 @media only screen and (max-width: 700px) {

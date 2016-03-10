@@ -3,13 +3,6 @@ angular.module('myPortfolio')
       
       $location.hash('projects');  
      
-    /*  if ($scope.reloadScreen) {
-            $location.reload();
-            $scope.reloadScreen = false;
-       } 
-    */   
-     
-      // call $anchorScroll()
       $anchorScroll();
     
 });

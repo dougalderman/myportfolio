@@ -24,7 +24,8 @@ angular.module('myPortfolio', ['ui.router'])
         })
         .state('Resume', {
   			    templateUrl: 'html/resumeTmpl.html',
-  			    url: '/resume'
+  			    url: '/resume',
+                controller: 'resumeCtrl'
         })
         .state('Contact', {
             templateUrl: 'html/contactTmpl.html',

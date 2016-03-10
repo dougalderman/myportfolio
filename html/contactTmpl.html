@@ -1,30 +1,43 @@
 <div id="contact" class="container">
     <div class="icons">
-        <a href=""><img ng-src="images/linkedin-icon.jpg" height="50"></a>
-        <a href=""><img ng-src="images/octocat.jpg" height="50"></a>
+        <a href="https://www.linkedin.com/in/dougsalderman" target="_blank"><img ng-src="images/linkedin-icon.jpg" height="50"></a>
+        <a href="https://github.com/dougalderman" target="_blank"><img ng-src="images/octocat.jpg" height="50"></a>
     </div>
     
-    <div class="row">
-        <form class="col s12">
+    <!--<div class="row">
+        <form class="col s12" ng-submit="contactForm()">
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="name" type="text" class="validate" required>
-                    <label for="name">Name</label>
+                    <input id="name" type="text" class="validate" ng-model="contact.firstName" required>
+                    <label for="name">First Name</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="email" type="email" class="validate" required>
+                     <input id="name" type="text" class="validate" ng-model="contact.lastName" required>
+                    <label for="name">Last Name</label>
+                   </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="email" type="email" class="validate" ng-model="contact.email" required>
                     <label for="email" data-error="Invalid" >Email</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="emailAgain" type="email" class="validate" ng-model="contact.emailAgain" required>
+                    <label for="emailAgain" data-error="Invalid" >Re-enter Email</label>
+                </div>
+                <div class="matchError" ng-show="emailMatchError">
+                    Emails don't match
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="phone" type="tel" class="validate">
+                    <input id="phone" type="tel" class="validate" ng-model="contact.phone">
                     <label for="phone" data-error="Invalid">Phone</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="textarea1" class="validate materialize-textarea"></textarea>
+                    <textarea id="textarea1" class="validate materialize-textarea" ng-model="contact.message"></textarea>
                     <label for="textarea1">Message</label>
                 </div>
             </div>
@@ -34,5 +47,5 @@
                 </div>
             </div>
         </form>
-    </div>
+    </div>-->
 </div>    
