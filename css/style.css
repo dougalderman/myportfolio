@@ -82,6 +82,10 @@ html, body {
     color: black;
 }
 
+.boldText {
+    font-weight: bold;
+}
+
 #projects {
  /*   height: 600vh; */
 }
