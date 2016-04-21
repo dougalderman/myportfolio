@@ -103,6 +103,18 @@ html, body {
     width: 100%;
 }
 
+#projects h3 {
+    font-family: "Arial";
+    font-size: 2.8em;
+    margin-top: 40px; 
+    color: darkslateblue;
+}
+
+#projects h4 {
+    font-family: "Arial";
+    font-size: 1.8em;
+}
+
 #projects h4.fltlft {
     float: left;
     margin-right: 20px;
