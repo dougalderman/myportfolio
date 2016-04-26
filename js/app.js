@@ -1,4 +1,4 @@
-angular.module('myPortfolio', ['ui.router'])
+angular.module('myPortfolio', ['ui.router', 'zumba.angular-waypoints'])
 .config(function ($stateProvider, $urlRouterProvider) {
 
     // routing configuration code
@@ -14,17 +14,17 @@ angular.module('myPortfolio', ['ui.router'])
   		})
         .state('Projects', {
   			    templateUrl: 'html/homeTmpl.html',
-  			    url: '/',
+  			    url: '/#projects',
                 controller: 'projectsCtrl'
         })
         .state('About', {
   			    templateUrl: 'html/homeTmpl.html',
-  			    url: '/',
+  			    url: '/#about',
                 controller: 'aboutCtrl'
         })
         .state('Contact', {
             templateUrl: 'html/homeTmpl.html',
-            url: '/',
+            url: '/#contact',
             controller: 'contactCtrl'
         });
 

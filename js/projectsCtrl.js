@@ -3,6 +3,6 @@ angular.module('myPortfolio')
       
       $location.hash('projects');  
      
-      $anchorScroll();
+      $anchorScroll(); 
     
 });

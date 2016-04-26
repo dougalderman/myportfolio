@@ -8,6 +8,6 @@ angular.module('myPortfolio')
     
       $location.hash('about');  
         
-      $anchorScroll()
+      $anchorScroll() 
      
 });

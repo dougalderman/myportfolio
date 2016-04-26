@@ -1,31 +1,30 @@
 angular.module('myPortfolio')
 .controller('homeCtrl', function ($scope) {
-     
- /*      if ($scope.reloadScreen) {
-            location.reload();
-            $scope.reloadScreen = false;
-       }
-*/
-    
-   /* $(document).ready(function(){
-        $('.tooltipped').tooltip({delay: 50});
-     });
-    
-     $(document).ready(function(){
-      $('.parallax').parallax();
-     });  */
 	
+	/* $scope.waypoints = {};
+	
+	$scope.waypoints.fixedNav = {};
+	$scope.waypoints.fixedNav.down = false;
+	$scope.waypoints.fixedNav.up = true;
+	
+	$scope.waypoints.inProjects = {};
+	$scope.waypoints.inProjects.down = false;
+	$scope.waypoints.inProjects.up = true; */
+	
+	/* $scope.showFixed = false; 
+ 
 	$(document).ready(function(){
 		
-		/* var sticky1 = new Waypoint.Sticky({
-  	element: $('#fixed-navbar')[0]
-		});  */
-		
-		/* var sticky2 = new Waypoint.Sticky({
-  	element: $('#pic_navbar')[0]
-		}); */
+		var waypoint = new Waypoint({
+  			element: document.getElementById('projects'),
+  			handler: function($scope) {
+				console.log('$scope.waypoints.showFixed.down (in waypoint) = ' + $scope.waypoints.showFixed.down);
+  			}
+		});
 
-	});
+	}); */
+	
+	
         
 
 });

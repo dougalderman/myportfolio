@@ -1,12 +1,12 @@
-<div id="fixed-navbar" class="navbar">
+<div id="fixed-navbar" class="navbar" ng-show="waypoints.fixedNav.down">
 	<div class="name_navbar">
 		<a id="name-fixednav" ui-sref="Home">Doug Alderman</a>
 	</div>
 	<div class="ul_navbar">
 		<ul>
-			<li><a id="projects-fixednav" ui-sref="Projects">Projects</a></li>
-			<li><a id="about-fixednav" ui-sref="About">About</a></li>
-			<li><a id="contact-fixednav" ui-sref="Contact">Contact</a></li>
+			<li><a id="projects-fixednav" ui-sref="Projects" ng-class="{highlight: waypoints.inProjects.down}">Projects</a></li>
+			<li><a id="about-fixednav" ui-sref="About" ng-class="{highlight: waypoints.inAbout.down}">About</a></li>
+			<li><a id="contact-fixednav" ui-sref="Contact" ng-class="{highlight: waypoints.inContact.down}">Contact</a></li>
 		</ul>
 	</div>
 
@@ -15,7 +15,7 @@
 <div class="intro">
 	<img ng-src="images/Salt_Lake_City.jpg">
     <div class="pic_text">
-		<div id="pic_navbar" class="navbar">
+		<div id="pic_navbar" class="navbar" ng-hide="waypoints.fixedNav.down">
 			<div class="name_navbar">
 				<a id="name-pic" ui-sref="Home">Doug Alderman</a>
 			</div>
@@ -27,14 +27,19 @@
 				</ul>
 			</div>
     	</div>
-     	<h4>Experienced Salt Lake City developer</h4>
+     	<h3>Experienced Salt Lake City Developer</h3>
+		<h4>Specializing in MEAN Full-Stack Web Development</h4>
     </div>
 </div>
 
 <div class="container">
     <!-- Page Content goes here -->
-    
-    <div id="projects" class="showcase">
+    <div zum-waypoint="waypoints"
+    	down="fixedNav.down"
+		up="fixedNav.up"
+		offset="20%">
+	</div>
+	<div id="projects" class="showcase" zum-waypoint="waypoints" down="inProjects.down" up="inProjects.up">
         <h3>Projects</h3>  
         <div class="project">
             <h4 class="fltlft">DevMountain Survey Enhancement</h4>
@@ -63,19 +68,32 @@
         </div>
     </div>
 -->
-        
-    <div id="about" class="showcase">
+	</div>
+	<div zum-waypoint="waypoints" down="inProjects.up" up="inProjects.down"></div>
+	<div id="about" class="showcase" zum-waypoint="waypoints" down="inAbout.down" up="inAbout.up">
         <img ng-src="images/doug_photo.jpg" width="200">
         <p>Doug Alderman graduated from <a href="https://devmounta.in/web-immersive" target="_blank">DevMountain</a> web programmer immersive bootcamp program in March 2016. He acquired full stack developer skills focusing on the Javascript-based <a href="http://mean.io/#!/" target="_blank">MEAN</a> stack (Mongo Database, Express Server, Angular Front End, and Node environment). Doug is eager to work again as a programmer, using the latest technologies.</p>
         <p>Doug grew up in the New York City area, and attended college at University of Virginia and University of Utah. Doug was an experienced developer working with IBM 4690 point-of-sale (POS) registers. He worked for companies such as American Stores / Albertsons, Thrify Drug Stores, and Linens 'N Things. Doug was promoted to a senior system analyst position at Albertsons. He has lived in Utah for over 15 years.</p>
 <!--        <p>See Doug's <a ui-sref="Resume">resume</a>.</p>-->
-        <div class="icons">
+        
+    </div>
+    <div zum-waypoint="waypoints" down="inAbout.up" up="inAbout.down"></div>
+	<div id="contact" class="showcase" zum-waypoint="waypoints" down="inContact.down" up="inContact.up" offset="20%">	
+		<div class="icons">
             <a href="https://www.linkedin.com/in/dougsalderman" target="_blank"><img ng-src="images/linkedin-icon.jpg" height="50"></a>
             <a href="https://github.com/dougalderman" target="_blank"><img ng-src="images/octocat.jpg" height="50"></a>
         </div>
-    </div>
-    
-	<div id="contact" class="showcase">	
 	Contact Form
+		<div class="contact-form">
+			<div>
+			Name:	
+			</div>	
+			<div>
+			Email:	
+			</div>
+			<div>
+			Message:	
+			</div>
+		</div>
 	</div>
 </div>
