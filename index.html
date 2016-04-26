@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <title>Doug Alderman Portfolio</title>
     
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.css">-->
    
     <link rel="stylesheet" href="css/style.css">
     
@@ -16,42 +16,39 @@
 
 <body id="top" ng-controller="mainCtrl">
     
-     <div class="navbar-fixed">
+   <!--  <div class="navbar-fixed" ng-show="showNavbar">
         <nav>
             <div class="topnav nav-wrapper">
-                <span id="dougname" class="brand-logo">Doug Alderman</span>
+                <a ui-sref="Home" id="dougname" class="brand-logo">Doug Alderman</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse hide-on-small-med-and-up"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-small-med-and-down">
-                    <li><a ui-sref="Home">Home</a></li>
                     <li><a ui-sref="Projects">Projects</a></li>
                     <li><a ui-sref="About">About</a></li>
-<!--
-                    <li><a ui-sref="Resume">Resume</a></li>
                     <li><a ui-sref="Contact">Contact</a></li>
--->
                 </ul>
                  <ul id="mobile-demo" class="sidenav side-nav">
-                    <li><a ui-sref="Home">Home</a></li>
                     <li><a ui-sref="Projects">Projects</a></li>
                     <li><a ui-sref="About">About</a></li>
-<!--
-                    <li><a ui-sref="Resume">Resume</a></li>
                     <li><a ui-sref="Contact">Contact</a></li>
--->
                 </ul>
             </div>
         </nav>
     </div>
-
+-->
            
     <div ui-view></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
 <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.js"></script> -->
-    <script src="js/materialize.js"></script>
+ <!--   <script src="js/materialize.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
     <!--<script src="https://code.angularjs.org/1.4.8/angular-animate.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
   
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/shortcuts/infinite.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/shortcuts/inview.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/shortcuts/sticky.js"></script>
+	
     <script src="js/app.js"></script>
     <script src="js/mainCtrl.js"></script>
     <script src="js/homeCtrl.js"></script>

@@ -1,5 +1,9 @@
 angular.module('myPortfolio')
-.controller('contactCtrl', function ($scope) {
+.controller('contactCtrl', function ($scope, $location, $anchorScroll) {
+      
+	$location.hash('contact');  
+     
+	$anchorScroll();
     
     $scope.contact = {};
     $scope.emailMatchError = false;

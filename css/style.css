@@ -9,39 +9,102 @@ html, body {
 
 .intro {
     position: relative;
-    height: 90vh;
+    height: 120vh; 
     margin-top: 0;
     margin-bottom: 20px;
 }
 
-/*.intro :before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-image: url("/images/Salt_Lake_City.jpg");
-    background-size: cover;
-    opacity: 0.2;
-    z-index: -1; 
-}
-*/
-
 .intro img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.3;
+	opacity: 0.3;
     z-index: -1; 
 }
 
-.intro .content {
-    padding-top: 20px;
-    padding-left: 20px;
+.intro .pic_text {
+	position: absolute;
+	top: 20px;
+	left: 0;
     z-index: 1; 
+	width: 100%;
+} 
+
+#fixed-navbar {
+	background: #000;
+	color: #fff;
+	position: fixed;
+	display: none;
+}
+
+/* .stuck {
+	position: fixed;
+	top: 0;
+	z-index: 10;
+} */
+
+#pic_navbar {
+	position: fixed;
+}
+
+.navbar {
+   	height: 70px;
+	line-height: 70px;
+	width: 100%;
+}
+
+.name_navbar {
+    position: absolute;
+    left: 10px;
+    font-size: 1.9em;
+	height: inherit;
+	line-height: inherit;
+}
+
+#name-fixednav, #projects-fixednav, #about-fixednav, #contact-fixednav {
+	color: #fff; 
+	font-family: Arial;
+	text-decoration: none;
+}
+
+#name-fixednav:hover, #projects-fixednav:hover, #about-fixednav:hover, #contact-fixednav:hover { 
+	color: crimson;
+}
+
+#name-pic, #projects-pic, #about-pic, #contact-pic {
+	color: rgb(0, 6, 255); 
+	font-family: Arial;
+	text-decoration: none;
+}
+
+#name-pic:hover, #projects-pic:hover, #about-pic:hover, #contact-pic:hover { 
+	color: crimson;
+}
+	
+.ul_navbar {
+    position: absolute;
+    right: 100px;
+    font-size: 1.2em;
+	height: inherit;
+	line-height: inherit;
+}
+
+.ul_navbar ul {
+	margin: 0;
+}
+
+.ul_navbar li {
+	display: inline;
+	margin-left: 20px;
+}
+
+.pic_text h4 {
+	position: absolute;
+	top: 100px;
+	left: 30px;
+	font-size: 2em;
+}
+
+.container {
+	margin-top: 130px;
+	padding-top: 40px;
 }
 
 .showcase {
@@ -62,9 +125,10 @@ html, body {
     color: black;
 }
 
-.topnav span {
+.topnav #dougname {
     text-align: left;
     padding-left: 10px;
+    font-size: 1.7em;
 }
 .sidenav {
  /*   background-color: rgba(128, 12, 0, 0.68); */

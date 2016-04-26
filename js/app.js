@@ -22,14 +22,9 @@ angular.module('myPortfolio', ['ui.router'])
   			    url: '/',
                 controller: 'aboutCtrl'
         })
-        .state('Resume', {
-  			    templateUrl: 'html/resumeTmpl.html',
-  			    url: '/resume',
-                controller: 'resumeCtrl'
-        })
         .state('Contact', {
-            templateUrl: 'html/contactTmpl.html',
-            url: '/contact',
+            templateUrl: 'html/homeTmpl.html',
+            url: '/',
             controller: 'contactCtrl'
         });
 
