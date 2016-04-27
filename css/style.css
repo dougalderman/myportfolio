@@ -34,6 +34,7 @@ html, body {
 	background: #000;
 	color: #fff;
 	position: fixed;
+	z-index: 5;
 }
 
 /* .stuck {
@@ -172,39 +173,67 @@ html, body {
     font-weight: bold;
 }
 
-#projects {
- /*   height: 600vh; */
-}
-
 #projects p {
     font-family: "Helvetica", sans-serif;
-    font-size: 1.2em;
+    font-size: 1em;
+	margin-top: 0;
 }
+
+#projects h3 {
+    font-family: "Arial";
+    font-size: 2.8em;
+    margin: 40px 0 60px 15px; 
+    color: darkslateblue;
+}
+
 
 #projects .project {
     margin-bottom: 60px;
+	position: relative;
+	height: 500px;
+	width: 100%;
+}
+
+#projects .project-title {
+	display: flex;
+	flex-direction: row;
+   	height: 70px;
+	margin-bottom: 10px;
+	width: inherit;
+}
+
+#projects h4.title {
+	display: block;
+	font-family: "Arial";
+	font-size: 1.8em;
+	margin: 0 20px 0 15px;
+}
+
+/* #projects h4 .title {
+	position: absolute;
+	left: 0;
+} */
+
+#projects .github-link {
+	display: block;
+}
+
+#projects .project .project-left {
+	position: absolute;
+	width: 45%;
+	left: 15px;
+}
+
+#projects .project .project-right {
+	position: absolute;
+	right: 10px;
+	width: 50%;
 }
 
 #projects .project_img {
     width: 100%;
 }
 
-#projects h3 {
-    font-family: "Arial";
-    font-size: 2.8em;
-    margin-top: 40px; 
-    color: darkslateblue;
-}
-
-#projects h4 {
-    font-family: "Arial";
-    font-size: 1.8em;
-}
-
-#projects h4.fltlft {
-    float: left;
-    margin-right: 20px;
-}
 
 #about {
     height: 100vh;
