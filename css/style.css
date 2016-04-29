@@ -9,17 +9,17 @@ html, body {
 
 .intro {
     position: relative;
-    height: 170vh; 
+/*    height: 170vh; */
     margin-top: 0;
     margin-bottom: 20px;
 	width: 100%;
 }
 
 .intro img {
-	opacity: 0.3;
-    z-index: -1; 
+	opacity: 0.5; 
+	z-index: -1; 
 	width: inherit;
-	height: inherit;
+/*	height: inherit; */
 }
 
 .intro .pic_text {
@@ -28,7 +28,15 @@ html, body {
 	left: 0;
     z-index: 1;
 	width: inherit;
+	height: 80vh;
 } 
+
+.intro .pic_text h3, .intro .pic_text h4 {
+	text-align: center;
+	display: block;
+	width: inherit;
+	margin: 40px auto;
+}
 
 #fixed-navbar {
 	background: #000;
@@ -173,13 +181,13 @@ html, body {
     font-weight: bold;
 }
 
-#projects p {
+p {
     font-family: "Helvetica", sans-serif;
     font-size: 1em;
 	margin-top: 0;
 }
 
-#projects h3 {
+h3 {
     font-family: "Arial";
     font-size: 2.8em;
     margin: 40px 0 60px 15px; 
@@ -188,9 +196,9 @@ html, body {
 
 
 #projects .project {
-    margin-bottom: 60px;
+	margin-top: 60px;
 	position: relative;
-	height: 500px;
+ 	height: 100vh; 
 	width: 100%;
 }
 
@@ -236,37 +244,33 @@ html, body {
 
 
 #about {
-    height: 100vh;
-}
+    margin-bottom: 30px;
+} 
 
-#about p {
-    font-family: "Helvetica", sans-serif;
-    font-size: 1.2em;
-}
 #about img {
     float: left;
     padding-right: 10px;
 }
 
+
+
 #contact .icons {
-    height: 50px;
-    margin: 20px auto;
+    height: 70px;
+    margin: 20px 30px;
 }
 
 #contact .icons a {
     margin-right: 30px;
 }
 
-#contact .contact-form {
+#contact .contact-form-container {
 	height: 300px;
 }
 
-#contact h3 {
-    font-family: "Arial";
-    font-size: 2.5em;
-    color: darkslateblue;
-    margin-top: 30px;
-    margin-bottom: 30px;
+#contact .contact_background {
+	opacity: 0.8; 
+    z-index: -1; 
+	width: 100%;
 }
 
 #contact .button {
