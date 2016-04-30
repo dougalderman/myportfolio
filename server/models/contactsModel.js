@@ -1,0 +1,62 @@
+var mongoose = require('mongoose'),
+    nodemailer = require('nodemailer'),
+    sparkPostTransport = require('nodemailer-sparkpost-transport'),
+    Schema = mongoose.Schema;
+
+var commentsSchema = new Schema({
+    name: {type: 'String', required: true, lowercase: true},
+	phone: {type: 'String'},
+    email: {type: 'String', required: true, lowercase: true},
+    message: {type: 'String', required: true}
+});
+
+
+commentsSchema.post('save', function(comment){
+  postsModel
+    .findById(comment.postParent)
+    .exec(function(err, post){
+      if(err) return err;
+      post.numComments++;
+      post.save(function(err, result){
+        if(err) return err;
+      });
+
+      if (JSON.stringify(comment.user) !== JSON.stringify(post.user)) { // if user doing comment is different than user who originally posted
+          usersModel
+            .findById(post.user)
+            .exec(function(er, user){
+              if(er) return er;
+              if(user.preferences && (user.preferences.communicationPreferences === 'newcomment' || user.preferences.communicationPreferences === 'all')) {
+                  console.log('SENDING EMAIL');
+                  var transporter = nodemailer.createTransport(sparkPostTransport({
+                    "content": {
+                      "template_id": "comment-notification"
+                    },
+                    "substitution_data": {
+                      "postId": post._id,
+                      "commentBody": comment.body
+                      /* "commentAuthor": comment.user.firstName + ' ' + comment.user.lastName */
+                    }
+                  }));
+                  transporter.sendMail({
+                      "recipients": [
+                       {
+                           "address":
+                           {
+                              "email": user.email,
+                              "name": user.firstName + " " + user.lastName
+                           }
+                       }
+                      ]
+                  }, function(e, info) {
+                        if (e) { console.log('EMAIL ERROR: ', e); }
+                        else { console.log('EMAIL SENT: ', info); }
+                  });
+              }
+             // return user;
+        });
+      }
+    });
+});
+
+module.exports =  mongoose.model('Comments', commentsSchema);

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html ng-app="myPortfolio">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Doug Alderman Portfolio / Salt Lake City Web Developer / Angular, Node</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body id="top" ng-controller="mainCtrl">
+	
+	<div class="container">
+    
+		<div id="fixed-navbar" class="navbar" ng-show="waypoints.fixedNav.down">
+			<div class="name_navbar">
+				<a id="name-fixednav" href="#top">Doug Alderman</a>
+			</div>
+			<div class="ul_navbar">
+				<ul>
+					<li><a id="projects-fixednav" href="#projects" ng-class="{highlight: waypoints.inProjects.down}">Projects</a></li>
+					<li><a id="about-fixednav" href="#about" ng-class="{highlight: waypoints.inAbout.down}">About</a></li>
+					<li><a id="contact-fixednav" href="#contact" ng-class="{highlight: waypoints.inContact.down}">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="intro">
+			<img ng-src="images/Salt_Lake_City.jpg" height="675">
+			<div class="pic_text">
+				<div id="pic_navbar" class="navbar" ng-hide="waypoints.fixedNav.down">
+					<div class="name_navbar">
+						<a id="name-pic" href="#top">Doug Alderman</a>
+					</div>
+					<div class="ul_navbar">
+						<ul>
+							<li><a id="projects-pic" href="#projects">Projects</a></li>
+							<li><a id="about-pic" href="#about">About</a></li>
+							<li><a id="contact-pic" href="#contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				<h1 class="line_one">Experienced Salt Lake City Developer</h3>
+				<h1 class="line_two">Specializing in MEAN Full-Stack Web Development</h4>
+			</div>
+		</div>
+
+		<div class="main_content">
+			<!-- Page Content goes here -->
+			<div zum-waypoint="waypoints"
+				down="fixedNav.down"
+				up="fixedNav.up"
+				offset="20%">
+			</div>
+			<div id="projects" class="showcase" zum-waypoint="waypoints" down="inProjects.down" up="inProjects.up" offset="10%">
+				<h3>Projects</h3>  
+				<div class="project">
+					<div class="project-title">
+						<h4 class="title">DevMountain Survey Enhancement</h4>
+						<a class="github-link" href="https://github.com/dougalderman/surveys" target="_blank"><img ng-src="images/octocat.jpg" height="50"></a>
+					</div>
+					<div class="project-left">
+						<p>The purpose of this individual project was to make an efficient process for DevMountain to create and deliver surveys, and manage survey results. This project utilized the full MEAN stack. Previously, surveys were done via Google Docs. The survey system I designed is a template-based survey administration system <span class="boldText">that has been implemented by DevMountain</span>. An administration main menu has selections for creating / modifying templates, sending surveys and viewing results. Students see links to requested surveys when they log in. They click on the link, take the survey, then return back to the previous screen. Mongo DB collections include templates, surveys, users, results, and topics. There were 29 server endpoints. Click <a href="http://104.131.74.125" target="_blank">here</a> for a demo.</p>
+					</div>
+					<div class="project-right">
+						<img class="project_img" ng-src="images/take_survey_screen.jpg">
+					</div>
+				</div>
+				<div class="project">
+					<div class="project-title">
+						<h4 class="title">DevMountain Journey</h4>
+						<a class="github-link" href="https://github.com/DevMountain-Journey/journey-devmtn" target="_blank"><img ng-src="images/octocat.jpg" height="50"></a>
+					</div>
+					<div class="project-left">
+						<img class="project_img" ng-src="images/journey_devmtn_feed.jpg">
+					</div>
+					<div class="project-right">
+						<p>The purpose of this project was to create a system to allow students to blog and communicate their feelings to other students. A difference from a typical blog is that students choose an emotion level from 1 through 10, with 10 being highest, and their emotion is tracked along with what they were working on at the time. This project utilized the full MEAN stack. I worked with a group of 2 other student developers. My responsibility was primarily back end and filtering logic. I handled passport local auth and DevMountain auth. I also wrote query logic for quick filters and advanced search. Click <a href="http://104.131.74.125:8004" target="_blank">here</a> for a demo.</p>
+					</div>
+				</div>	
+				<div class="project">
+					<div class="project-title">
+						<h4 class="title">KSL Classifieds Web Scraper</h4>
+						<a class="github-link" href="https://github.com/dougalderman/macbook-search" target="_blank"><img ng-src="images/octocat.jpg" height="50"></a>
+					</div>
+					<p>This is a web scraper searching KSL classifieds for all Macbook pros between $800 and $1000, and >= 256 GB hard drive space. It utilizes CasperJS on top of PhantomJS. It demonstrates my Javascript skills and abililty to quickly learn a new JS library.</p>
+				</div>
+		<!--
+				<div class="project">
+					<h4 class="fltlft">Angular Picture Quiz</h4>
+					<a href="https://github.com/dougalderman/angular-pictureQuiz" class="tooltipped" data-position="right" data-tooltip="Code on GitHub" target="_blank"><img ng-src="images/octocat.jpg" height="50"></a>
+					<img class="project_img" ng-src="images/picture_quiz_example_question.jpg">
+					<p>This app is a online quiz with the option of using a picture as part of the question, or pictures as answer options. It allows for multiple choice, short answer, and true-false types questions. There are 3 text-only questions types, 3 picture question type, and one picture answer multiple choice, for a total of 7 question types.</p> 
+					<p>The app uses .json configuration files for all quiz information. The app uses only front-end Javascript frameworks Angular 1.x and Angular UI Router. Click <a href="http://dougalderman.github.io/angular-pictureQuiz/#/" target="_blank">here</a> for a demo.</p>
+				</div>
+			</div>-->
+		
+			</div>
+			<div zum-waypoint="waypoints" down="inProjects.up" up="inProjects.down" offset="10%"></div>
+			<div id="about" class="showcase" zum-waypoint="waypoints" down="inAbout.down" up="inAbout.up" offset="10%">
+				<h3>About Doug</h3>  
+				<img ng-src="images/doug_photo.jpg" width="200">
+				<p>Doug Alderman graduated from <a href="https://devmounta.in/web-immersive" target="_blank">DevMountain</a> web programmer immersive bootcamp program in March 2016. He acquired full stack developer skills focusing on the Javascript-based <a href="http://mean.io/#!/" target="_blank">MEAN</a> stack (Mongo Database, Express Server, Angular Front End, and Node environment). Doug is eager to work again as a programmer, using the latest technologies.</p>
+				<p>Doug grew up in the New York City area, and attended college at University of Virginia and University of Utah. Doug was an experienced developer working with IBM 4690 point-of-sale (POS) registers. He worked for companies such as American Stores / Albertsons, Thrify Drug Stores, and Linens 'N Things. Doug was promoted to a senior system analyst position at Albertsons. He has lived in Utah for over 15 years.</p>
+				<p class="fltlft">See Doug's resume:</p>
+				<a href="pdfs/Doug_Alderman_Resume_Website.pdf"><img ng-src="images/pdf-icon.jpg" height="50"></a>
+
+			</div>
+			<div zum-waypoint="waypoints" down="inAbout.up" up="inAbout.down" offset="10%"></div>
+			<div id="contact" class="showcase" zum-waypoint="waypoints" down="inContact.down" up="inContact.up" offset="10%">
+				<h3>Contact Doug</h3>  
+				<div class="icons">
+					<a href="https://www.linkedin.com/in/dougsalderman" target="_blank"><img ng-src="images/linkedin-icon.jpg" height="50"></a>
+					<a href="https://github.com/dougalderman" target="_blank"><img ng-src="images/octocat.jpg" height="50"></a>
+				</div>
+				<div class="contact-form-container">
+					<img class="contact_background" ng-src="images/Desolation_Lake.jpg" height="750">
+					<div class="contact-form">
+						<form ng-submit="contactForm()">					
+							<div class="name">
+								<input id="name" type="text" ng-model="contact.name" placeholder="Name" required>
+							</div>
+							<div class="phone">
+								 <input id="phone" type="tel" ng-model="contact.phone" placeholder="Phone">
+							</div>
+							<div class="email">
+								 <input id="email" type="email" ng-model="contact.email" placeholder="Email" required>
+							</div>
+							<div class="email-again">
+								 <input id="email-again" type="email" ng-model="contact.emailAgain" placeholder="Re-enter Email" required>
+							</div>
+							<div class="match-error" ng-show="emailMatchError">
+                    			Emails don't match
+                			</div>
+							<div class="message">
+								 <textarea id="message" ng-model="contact.message" placeholder="Message" required></textarea>
+							</div>
+							<div class="submit">
+								<input class="button" type="submit">
+							</div>
+							<div class="user-msg">
+								<p>{{userMsg}}</p>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>		
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <!--<script src="https://code.angularjs.org/1.4.8/angular-animate.js"></script>-->
+ 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/noframework.waypoints.js"></script>
+	<script src="bower_components/angular-waypoints/dist/angular-waypoints.js"></script>
+	
+	<script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
+	<script src="//cdn.jsdelivr.net/jquery.localscroll/1.4.0/jquery.localScroll.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/mainCtrl.js"></script>
+</body>
+
+</html>
+

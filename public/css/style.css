@@ -7,35 +7,8 @@ html, body {
     padding: 0;
 }
 
-.intro {
-    position: relative;
-/*    height: 170vh; */
-    margin-top: 0;
-    margin-bottom: 20px;
-	width: 100%;
-}
-
-.intro img {
-	opacity: 0.5; 
-	z-index: -1; 
-	width: inherit;
-/*	height: inherit; */
-}
-
-.intro .pic_text {
-	position: absolute;
-	top: 20px;
-	left: 0;
-    z-index: 1;
-	width: inherit;
-	height: 80vh;
-} 
-
-.intro .pic_text h3, .intro .pic_text h4 {
-	text-align: center;
-	display: block;
-	width: inherit;
-	margin: 40px auto;
+.container {
+	max-width: 100vw;
 }
 
 #fixed-navbar {
@@ -45,25 +18,41 @@ html, body {
 	z-index: 5;
 }
 
-/* .stuck {
-	position: fixed;
-	top: 0;
-	z-index: 10;
-} */
-
-#pic_navbar {
-	position: fixed;
-}
-
 .navbar {
    	height: 70px;
 	line-height: 70px;
 	width: 100%;
 }
 
+.intro {
+	position: relative;
+    margin-top: 0;
+    margin-bottom: 20px;
+	width: 100%;
+}
+
+.intro img {
+	opacity: 0.5; 
+	z-index: -1; 
+	width: inherit;
+}
+
+.intro .pic_text {
+	position: absolute;
+	top: 20px;
+	left: 0; 
+    z-index: 1;
+	width: inherit; 
+	height: 80vh;
+} 
+
+#pic_navbar {
+	position: fixed;
+}
+
 .name_navbar {
     position: absolute;
-    left: 10px;
+    left: 50px;
     font-size: 1.9em;
 	height: inherit;
 	line-height: inherit;
@@ -96,7 +85,7 @@ html, body {
 	
 .ul_navbar {
     position: absolute;
-    right: 70px;
+    right: 50px;
     font-size: 1.2em;
 	height: inherit;
 	line-height: inherit;
@@ -104,6 +93,7 @@ html, body {
 
 .ul_navbar ul {
 	margin: 0;
+	padding: 0;
 }
 
 .ul_navbar li {
@@ -111,29 +101,27 @@ html, body {
 	margin-left: 20px;
 }
 
-.pic_text h4 .first_line {
+.pic_text h1.line_one {
 	position: absolute;
-	top: 100px;
-	left: 30px;
+	top: 150px;
+/*	left: 50%; */  
 	font-size: 2em;
+/*	height: 50px; */
+	margin: 0;
+	padding: 0;
 }
 
-.pic_text h3 {
+.pic_text h1.line_two {
 	position: absolute;
-	top: 100px;
-	left: 30px;
-	font-size: 2em;
-}
-
-.pic_text h4 {
-	position: absolute;
-	top: 200px;
-	left: 30px;
+	top: 250px;
+	left: 50%;
+	margin: 0;
+	padding: 0;
 	font-size: 1.4em;
 	color: rgba(58, 47, 79, 0.78);
 }
 
-.container {
+.main_content {
 	margin-top: 80px;
 	/* padding-top: 40px; */
 }
@@ -142,25 +130,6 @@ html, body {
     padding-top: 80px;
 }
 
-.topnav {
- /*   background-color: rgba(0, 187, 255, 0.59); */
-    background-color: rgba(128, 12, 0, 0.68);
-}
-
-.topnav a {
- /*   background-color: rgba(0, 187, 255, 0.59); */
-    font-size: 1.2em;
-}
-.topnav a:hover {
-    background-color: darkgrey;
-    color: black;
-}
-
-.topnav #dougname {
-    text-align: left;
-    padding-left: 10px;
-    font-size: 1.7em;
-}
 .sidenav {
  /*   background-color: rgba(128, 12, 0, 0.68); */
     background-color: rgb(128, 12, 0);
@@ -194,6 +163,20 @@ h3 {
     color: darkslateblue;
 }
 
+a {
+	text-decoration: none;
+	color: rgb(0, 6, 255); 
+}
+
+a:hover {
+	color: crimson;
+}
+
+.fltlft {
+	float: left;
+	margin-top: 10px;
+	margin-right: 10px;
+}
 
 #projects .project {
 	margin-top: 60px;
@@ -252,8 +235,6 @@ h3 {
     padding-right: 10px;
 }
 
-
-
 #contact .icons {
     height: 70px;
     margin: 20px 30px;
@@ -264,29 +245,157 @@ h3 {
 }
 
 #contact .contact-form-container {
-	height: 300px;
+	position: relative;
+	height: 750px; 
 }
 
 #contact .contact_background {
+	position: absolute;
+	bottom: 0;
 	opacity: 0.8; 
     z-index: -1; 
 	width: 100%;
 }
 
-#contact .button {
-    height: 30px;
+#contact .contact-form {
+	position: absolute;
+	height: 600px;
+	width: 1100px;
+	top: 50px;
+	left: 50%;
+	background: none;
+	margin-left: -550px;
+}
+
+#contact .contact-form div {
+	position: absolute;
+	padding-left: 5px;
+	background: #fff;
+}
+
+#contact div.name {
+	top: 0;
+	left: 33%;
+	height: 50px;
+	width: 300px;
+	margin-left: -150px;
+}
+
+#contact div.phone {
+	top: 0;
+	left: 67%;
+	height: 50px;
+	width: 300px;
+	margin-left: -150px;
+}
+
+#contact div.email {
+	top: 120px;
+	left: 33%;
+	height: 50px;
+	width: 300px;
+	margin-left: -150px;
+}
+
+#contact div.email-again {
+	top: 120px;
+	left: 67%;
+	height: 50px;
+	width: 300px;
+	margin-left: -150px;
+}
+
+#contact div.message {
+	top: 240px;
+	left: 50%;
+	height: 300px;
+	width: 674px; /* make it equal to width of 2 combined div's above + space in between */
+	margin-left: -337px;
+}
+
+#contact div.submit {
+	position: absolute;
+	top: 600px;
+	left: 50%;
+    height: 50px;
     width: 120px;
+	margin-left: -60px;
+	padding: 0;
+}
+
+#contact .button {
     font-family: Arial;
     font-size: 1.2em;
     color: white;
-    background-color: black;
-  
+    background-color: rgb(81, 50, 203);
 }
 
-#contact .matchError {
+#contact .match-error {
+	position: absolute;
+	top: 120px;
+	left: 30px;
     color: red;
     font-weight: bold;
     font-size: 1em;
+}
+
+#contact .user-msg {
+	position: absolute;
+	top: 680px;
+	left: 50%;
+	height: 50px;
+	width: 120px;
+	margin-left: 60px;
+	color: red;
+}
+	
+
+#contact input {
+	height: inherit;
+	width: inherit;
+	background: inherit;
+	border: none;
+	color: #000;
+	font-family: Arial;
+    font-size: 1em;
+}
+
+#contact textarea {
+	height: inherit;
+	width: inherit;
+	background: inherit;
+	border: none;
+	color: #000;
+	font-family: Arial;
+    font-size: 1em;
+}
+
+#contact textarea:focus, input:focus{
+    outline: none;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	font-family: Arial;
+  	font-size: 1em;
+ 	color: darkgreen;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  font-family: Arial;
+  font-size: 1em;	
+  color: green;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+	font-family: Arial;
+  	font-size: 1em;
+	color: green;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	font-family: Arial;
+  	font-size: 1em;
+	color: green;
 }
 
 @media only screen and (max-width: 700px) {
