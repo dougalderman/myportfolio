@@ -139,8 +139,8 @@
 							<div class="submit">
 								<input class="button" type="submit">
 							</div>
-							<div class="user-msg">
-								<p>{{userMsg}}</p>
+							<div class="user-msg" ng-class="{green: formSuccess, red: !formSuccess}" ng-show="userMsg">
+								{{userMsg}}
 							</div>
 						</form>
 					</div>
@@ -161,6 +161,7 @@
 	<script src="//cdn.jsdelivr.net/jquery.localscroll/1.4.0/jquery.localScroll.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/mainCtrl.js"></script>
+    <script src="js/mainService.js"></script>
 </body>
 
 </html>

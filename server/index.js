@@ -1,4 +1,4 @@
-require('dotenv').config({path: './.env'});
+require('dotenv').config();
 
 var express = require('express'),
     expressSession = require('express-session'),
@@ -19,16 +19,10 @@ app.use(expressSession({
 }));
 
 
-
 // Endpoints
 
-
-
 // Contacts
-app.get('/api/contacts', contactsCtrl.read); // Get contacts. Accepts query parameter. Contacts collection.
-app.put('/api/contacts/:id', contactsCtrl.update); // Update contact. Contacts collection.
 app.post('/api/contacts/', contactsCtrl.create); // Create new contact. Contacts collection.
-app.delete('/api/contacts/:id', contactsCtrl.delete); // Delete contact. Contacts collection.
 
 //DB and Server Init
 var mongoUri = process.env.DMJ_MONGO_URI,

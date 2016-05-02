@@ -11,13 +11,14 @@ angular.module('myPortfolio')
 		
 		leftMargin = $('.pic_text h1.line_two').width() * -0.5;
 		
-		$('.pic_text h1.line_two').css({'left': '50%', 'margin-left': leftMargin + 'px'});  // Set left of absolutely positioned element to 50%. Set margin left to -0.5 of width. This will center the element. 
-
+		$('.pic_text h1.line_two').css({'left': '50%', 'margin-left': leftMargin + 'px'});  // Set left of absolutely positioned element to 50%. Set margin left to -0.5 of width. This will center the element.
+		
 	});
 	
 	$scope.contact = {};
 	$scope.userMsg = '';
     $scope.emailMatchError = false;
+	$scope.formSuccess = false;
      
      
     $scope.contactForm = function() {
@@ -27,11 +28,13 @@ angular.module('myPortfolio')
             $scope.emailMatchError = false;
             mainService.writeContact($scope.contact); // do http POST request to server
 			$scope.contact = {};
-			$scope.userMsg = 'Message successfully sent'
-        }
+			$scope.formSuccess = true;
+			$scope.userMsg = 'Message successfully sent';
+		}
         else {
             $scope.emailMatchError = true;
-			$scope.userMsg = 'There was a problem with this form'
-        }
+			$scope.formSuccess = false;
+			$scope.userMsg = 'There was a problem with this form';
+		}
     }  
 });

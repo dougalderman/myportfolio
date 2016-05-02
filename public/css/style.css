@@ -259,7 +259,7 @@ a:hover {
 
 #contact .contact-form {
 	position: absolute;
-	height: 600px;
+	height: 700px;
 	width: 1100px;
 	top: 50px;
 	left: 50%;
@@ -306,6 +306,7 @@ a:hover {
 }
 
 #contact div.message {
+	padding-top: 5px;
 	top: 240px;
 	left: 50%;
 	height: 300px;
@@ -333,23 +334,31 @@ a:hover {
 #contact .match-error {
 	position: absolute;
 	top: 120px;
-	left: 30px;
+	left: 0px;
+	padding: 5px;
     color: red;
+	font-family: Arial;
     font-weight: bold;
     font-size: 1em;
 }
 
 #contact .user-msg {
 	position: absolute;
-	top: 680px;
-	left: 50%;
-	height: 50px;
-	width: 120px;
-	margin-left: 60px;
-	color: red;
+	top: 600px;
+	font-family: Arial;
+	font-size: 1em;
+	font-weight: bold;
+	left: 60px;
+	padding: 5px;
 }
 	
+#contact .green {
+	color: green;
+}
 
+#contact .red {
+	color: red;
+}
 #contact input {
 	height: inherit;
 	width: inherit;
