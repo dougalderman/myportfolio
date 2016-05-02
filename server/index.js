@@ -3,9 +3,10 @@ require('dotenv').config();
 var express = require('express'),
     expressSession = require('express-session'),
     bodyParser = require('body-parser'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'); 
 
 var contactsCtrl = require('./controllers/contactsCtrl.js');
+var recaptchaCtrl = require('./controllers/recaptchaCtrl.js');
    
 var app = express();
 
@@ -20,6 +21,9 @@ app.use(expressSession({
 
 
 // Endpoints
+
+// Recaptcha
+app.post('/api/recaptcha/', recaptchaCtrl.create); // Verify recaptcha
 
 // Contacts
 app.post('/api/contacts/', contactsCtrl.create); // Create new contact. Contacts collection.

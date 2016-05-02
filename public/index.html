@@ -136,8 +136,10 @@
 							<div class="message">
 								 <textarea id="message" ng-model="contact.message" placeholder="Message" required></textarea>
 							</div>
-							<div class="submit">
+							<div class="submit" ng-hide="inRecaptcha">
 								<input class="button" type="submit">
+							</div>
+							<div id="recaptcha-widget" ng-show="inRecaptcha">
 							</div>
 							<div class="user-msg" ng-class="{green: formSuccess, red: !formSuccess}" ng-show="userMsg">
 								{{userMsg}}
@@ -159,9 +161,14 @@
 	
 	<script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
 	<script src="//cdn.jsdelivr.net/jquery.localscroll/1.4.0/jquery.localScroll.min.js"></script>
+	
     <script src="js/app.js"></script>
     <script src="js/mainCtrl.js"></script>
     <script src="js/mainService.js"></script>
+	
+	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
 </body>
 
 </html>

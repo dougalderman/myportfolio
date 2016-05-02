@@ -306,7 +306,7 @@ a:hover {
 }
 
 #contact div.message {
-	padding-top: 5px;
+/* 	padding-top: 5px; */
 	top: 240px;
 	left: 50%;
 	height: 300px;
@@ -322,6 +322,19 @@ a:hover {
     width: 120px;
 	margin-left: -60px;
 	padding: 0;
+}
+
+#contact #recaptcha-widget {
+	position: absolute;
+	top: 600px;
+}
+
+#contact #recaptcha-widget div {
+	padding-left: 0;
+}
+
+#contact #recaptcha-widget div div {
+	background: none; 
 }
 
 #contact .button {
@@ -351,7 +364,7 @@ a:hover {
 	left: 60px;
 	padding: 5px;
 }
-	
+
 #contact .green {
 	color: green;
 }
@@ -370,6 +383,7 @@ a:hover {
 }
 
 #contact textarea {
+	padding-top: 5px;
 	height: inherit;
 	width: inherit;
 	background: inherit;
