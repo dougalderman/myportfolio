@@ -1,8 +1,30 @@
 angular.module('myPortfolio')
 .controller('mainCtrl', function ($scope, mainService) {
 	
+	var resetCaptcha = function() {
+		var newId = 0;
+		var len = $scope.currentRecaptchaId.length;
+		var idNum = $scope.currentRecaptchaId.charAt(len - 1); // return last character
+		if ($.isNumeric(idNum)) { // if number
+			idNum++;
+			newId = $scope.currentRecaptchaId.slice(0, len - 1) + idNum;
+		}
+		else {
+			idNum = 1;
+			newId = $scope.currentRecaptchaId + idNum;
+		}
+		
+		// Code alternative to error-producing grecaptcha.reset();
+		// Need to append new element because recaptcha code will check if element has been used before for recaptcha.
+		$('#' + $scope.currentRecaptchaId).empty(); // empty widget
+		$('#' + $scope.currentRecaptchaId).append('<div id="' + newId + '"></div>'); // set id to newId
+		
+		$scope.currentRecaptchaId = newId; // update currentRecaptchaId
+
+	};
+	
 	var recaptchaExpired = function() {
-		grecaptcha.reset();
+		resetCaptcha();
 	};
 		
 	var recaptchaCB = function(recaptchaResponse) {
@@ -20,7 +42,7 @@ angular.module('myPortfolio')
 						console.log('in writeContact valid response');
 						console.log('resp = ', resp);
 						$scope.inRecaptcha = false;  // no longer in recaptcha
-						grecaptcha.reset();
+						resetCaptcha();
 						if (resp.status === 200) { // Good status code
 							$scope.contact = {};
 							$scope.formSuccess = true;
@@ -34,46 +56,52 @@ angular.module('myPortfolio')
 						console.log('in writeContact error')
 						console.error('er = ', er);
 						$scope.inRecaptcha = false;  // no longer in recaptcha
-						grecaptcha.reset();
+						resetCaptcha();
 						$scope.formSuccess = false;
 						$scope.userMsg = 'Problem sending the message.'; 
 					});
 				} 
 				else { // !response.data.formSubmit
 					$scope.formSuccess = false;
-					grecaptcha.reset();
+					$scope.inRecaptcha = false;  // no longer in recaptcha
+					resetCaptcha();
 					$scope.userMsg = 'Problem verifying you\'re not a robot.'; 
 				}
 			}
 			else { // not good status code (for verifyRecaptcha)
+				$scope.inRecaptcha = false;  // no longer in recaptcha
 				$scope.formSuccess = false;
-				resetCaptcha();
+				resetCaptcha();	
 				$scope.userMsg = 'Problem verifying you\'re not a robot.'; 
 			}
 		}, function(err) {
+			$scope.formSuccess = false;
+			$scope.inRecaptcha = false;  // no longer in recaptcha
 			console.log('in verifyRecaptcha error')
 			console.error('err = ', err);
-			grecaptcha.reset();
+			resetCaptcha();
 			$scope.userMsg = 'Problem verifying you\'re not a robot.'; 
         });
 	}
 	
 	var onLoadCallback = function() {
-		grecaptcha.render('recaptcha-widget', 
+		grecaptcha.render($scope.currentRecaptchaId, 
 		{
 			'sitekey' : '6LdOOAsAAAAAAEtjbq6sch1VWiMoBnX4bw4dIKfz',
 			'callback' : recaptchaCB,
 			'expired-callback': recaptchaExpired
 		});
 		
-		var leftMargin = $('#recaptcha-widget div div').width() * -0.5;
-		
-		$('#recaptcha-widget').css({'left': '50%', 'margin-left': leftMargin + 'px'});  // Set left of absolutely positioned element to 50%. Set margin left to -0.5 of width. This will center the element. 
+		if ($scope.currentRecaptchaId === 'recaptcha-widget') { // only do once for parent div 
+			var leftMargin = $('#' + $scope.currentRecaptchaId + ' div div').width() * -0.5;
+
+			$('#' + $scope.currentRecaptchaId).css({'left': '50%', 'margin-left': leftMargin + 'px'});  // Set left of absolutely positioned element to 50%. Set margin left to -0.5 of width. This will center the element. 
+		}
 		
 	}; 
 	
 	$(document).ready(function() {
-
+		
 		$.localScroll();
 		
 		var leftMargin = $('.pic_text h1.line_one').width() * -0.5;
@@ -91,7 +119,9 @@ angular.module('myPortfolio')
     $scope.emailMatchError = false;
 	$scope.formSuccess = false;
 	$scope.inRecaptcha = false;
-     
+	$scope.currentRecaptchaId = 'recaptcha-widget';
+
+	     
      
     $scope.contactForm = function() {
         console.log('in contact form')
