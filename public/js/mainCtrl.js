@@ -70,7 +70,7 @@ angular.module('myPortfolio')
 		
 		$('#recaptcha-widget').css({'left': '50%', 'margin-left': leftMargin + 'px'});  // Set left of absolutely positioned element to 50%. Set margin left to -0.5 of width. This will center the element. 
 		
-	};
+	}; 
 	
 	$(document).ready(function() {
 
