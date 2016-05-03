@@ -11,7 +11,7 @@ var contactsSchema = new Schema({
 });
 
 
-contactsSchema.post('save', function(contact){
+/* contactsSchema.post('save', function(contact){
 	console.log('SENDING EMAIL');
 	var transporter = nodemailer.createTransport(sparkPostTransport({
 	"content": {
@@ -37,6 +37,6 @@ contactsSchema.post('save', function(contact){
 		if (e) { console.log('EMAIL ERROR: ', e); }
 		else { console.log('EMAIL SENT: ', info); }
 	});
-});
+}); */
 
 module.exports =  mongoose.model('Contacts', contactsSchema);

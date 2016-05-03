@@ -6,7 +6,6 @@ angular.module('myPortfolio')
 	};
 		
 	var recaptchaCB = function(recaptchaResponse) {
-		
 		console.log('in recaptchaCB');
 		mainService.verifyRecaptcha({
 			'g-recaptcha-response': recaptchaResponse
@@ -16,12 +15,12 @@ angular.module('myPortfolio')
 			console.log('response = ', response);
 			if (response.status === 200) { // Good status code
 				if (response.data.formSubmit) { // if valid response
-					grecaptcha.reset();
-					$scope.inRecaptcha = false;  // no longer in recaptcha
 					mainService.writeContact($scope.contact) // do http POST request to server
 					.then(function(resp) {
 						console.log('in writeContact valid response');
 						console.log('resp = ', resp);
+						$scope.inRecaptcha = false;  // no longer in recaptcha
+						grecaptcha.reset();
 						if (resp.status === 200) { // Good status code
 							$scope.contact = {};
 							$scope.formSuccess = true;
@@ -29,31 +28,33 @@ angular.module('myPortfolio')
 						}
 						else { // Bad status
 							$scope.formSuccess = false;
-							$scope.userMsg = 'There was a problem sending the message.'; 
+							$scope.userMsg = 'Problem sending the message.'; 
 						}
 					}, function(er) {
 						console.log('in writeContact error')
 						console.error('er = ', er);
+						$scope.inRecaptcha = false;  // no longer in recaptcha
+						grecaptcha.reset();
 						$scope.formSuccess = false;
-						$scope.userMsg = 'There was a problem sending the message.'; 
+						$scope.userMsg = 'Problem sending the message.'; 
 					});
 				} 
 				else { // !response.data.formSubmit
 					$scope.formSuccess = false;
 					grecaptcha.reset();
-					$scope.userMsg = 'There was a problem verifying you are not a robot.'; 
+					$scope.userMsg = 'Problem verifying you\'re not a robot.'; 
 				}
 			}
 			else { // not good status code (for verifyRecaptcha)
 				$scope.formSuccess = false;
-				grecaptcha.reset();
-				$scope.userMsg = 'There was a problem verifying you are not a robot.'; 
+				resetCaptcha();
+				$scope.userMsg = 'Problem verifying you\'re not a robot.'; 
 			}
 		}, function(err) {
 			console.log('in verifyRecaptcha error')
 			console.error('err = ', err);
 			grecaptcha.reset();
-			$scope.userMsg = 'There was a problem verifying you are not a robot.'; 
+			$scope.userMsg = 'Problem verifying you\'re not a robot.'; 
         });
 	}
 	
@@ -95,12 +96,18 @@ angular.module('myPortfolio')
     $scope.contactForm = function() {
         console.log('in contact form')
         console.log('$scope.contact', $scope.contact);
+		/* if ($scope.formSuccess) { // if already successully submitted form
+			console.log('multiple form submit');
+			$scope.userMsg = 'Already successfully submitted form';
+			return;
+		} */
+			
         if ($scope.contact.email === $scope.contact.emailAgain) {
 			$scope.userMsg = '';
 			$scope.inRecaptcha = true;
-            $scope.emailMatchError = false;
+		    $scope.emailMatchError = false;
 			$scope.formSuccess = false;
-			$scope.userMsg = 'Please confirm you are not a robot'; 
+			$scope.userMsg = 'Please confirm that you\'re not a robot'; 
 			onLoadCallback(); // Call recaptcha
 		}
         else {
