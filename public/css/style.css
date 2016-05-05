@@ -250,7 +250,8 @@ a:hover {
 #about {
     margin-bottom: 30px;
 	height: 80vh;
-	padding: 0 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 } 
 
 #about img {
@@ -494,7 +495,8 @@ a:hover {
 	#about {
 		height: auto;
 		margin-bottom: 80px;
-		padding: 0 5px;
+		padding-left: 5px;
+		padding-right: 5px;
 	}
 
 	#contact .contact-form {
