@@ -27,9 +27,17 @@
 					<li><a id="contact-fixednav" href="#contact" ng-class="{highlight: waypoints.inContact.down}">Contact</a></li>
 				</ul>
 			</div>
-			<div class="mobile_navbar">
+			<div class="mobile_navbar_icon" ng-click="activateMobileNavbar()">
 				&#9776;
 			</div>
+		</div>
+		
+		<div id="mobile_navbar" ng-show="mobileNavbarSelected" ng-click="deactivateMobileNavbar()">
+			<ul>
+				<li><a id="projects-mobilenav" href="#projects" ng-class="{highlight: waypoints.inProjects.down}" >Projects</a></li>
+				<li><a id="about-mobilenav" href="#about" ng-class="{highlight: waypoints.inAbout.down}">About</a></li>
+				<li><a id="contact-mobilenav" href="#contact" ng-class="{highlight: waypoints.inContact.down}">Contact</a></li>
+			</ul>
 		</div>
 
 		<div class="intro">
@@ -47,7 +55,7 @@
 							<li><a id="contact-pic" href="#contact">Contact</a></li>
 						</ul>
 					</div>
-					<div class="mobile_navbar">
+					<div class="mobile_navbar_icon" ng-click="activateMobileNavbar()">
 						&#9776;
 					</div>
 				</div>
