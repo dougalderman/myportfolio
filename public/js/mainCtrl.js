@@ -120,10 +120,13 @@ angular.module('myPortfolio')
 	$scope.formSuccess = false;
 	$scope.inRecaptcha = false;
 	$scope.currentRecaptchaId = 'recaptcha-widget';
-	$scope.mobile_navbar_selected = false;
+	$scope.mobileNavbarSelected = false;
 	
 	$scope.activateMobileNavbar = function() {
-		$scope.mobileNavbarSelected = true;
+		if ($scope.mobileNavbarSelected === false)
+			$scope.mobileNavbarSelected = true;
+		else // if Navbar is already active
+			$scope.mobileNavbarSelected = false;
 	}
 	
 	$scope.deactivateMobileNavbar = function() {

@@ -7,7 +7,8 @@ var contactsSchema = new Schema({
     name: {type: 'String', required: true, lowercase: true},
 	phone: {type: 'String'},
     email: {type: 'String', required: true, lowercase: true},
-    message: {type: 'String', required: true}
+    message: {type: 'String', required: true},
+	dateSent: {type: 'Date', default: Date.now}
 });
 
 

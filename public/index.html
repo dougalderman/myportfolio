@@ -18,7 +18,7 @@
     
 		<div id="fixed_navbar" class="navbar" ng-show="waypoints.fixedNav.down">
 			<div class="name_navbar">
-				<a id="name-fixednav" href="#top">Doug Alderman</a>
+				<a id="name-fixednav" href="#top" ng-click="deactivateMobileNavbar()">Doug Alderman</a>
 			</div>
 			<div class="ul_navbar">
 				<ul>
@@ -41,12 +41,17 @@
 		</div>
 
 		<div class="intro">
-			<img class="full_SLC" ng-src="images/Salt_Lake_City.jpg" alt="Salt Lake City" height="675">
-			<img class="reduced_SLC" ng-src="images/Salt_Lake_City_reduced.jpg" alt="Salt Lake City" height="338">
+			
+			<!--Picturefill image display-->
+			<picture>
+  				<source srcset="images/Salt_Lake_City_reduced.jpg" media="(max-width: 600px)">
+  				<img class="intro_background" srcset=" images/Salt_Lake_City.jpg" alt="Salt Lake City">
+			</picture>
+			
 			<div class="pic_text">
 				<div id="pic_navbar" class="navbar" ng-hide="waypoints.fixedNav.down">
 					<div class="name_navbar">
-						<a id="name-pic" href="#top">Doug Alderman</a>
+						<a id="name-pic" href="#top" ng-click="deactivateMobileNavbar()">Doug Alderman</a>
 					</div>
 					<div class="ul_navbar">
 						<ul>
@@ -141,8 +146,13 @@
 					<a href="https://github.com/dougalderman" target="_blank"><img ng-src="images/octocat.jpg" height="50"></a>
 				</div>
 				<div class="contact-form-container">
-					<img class="contact_background" ng-src="images/Desolation_Lake.jpg" alt="Desolation Lake" height="750">
-					<img class="contact_background_mobile" ng-src="images/Secret_Lake.jpg" alt="Secret Lake" height="750">
+					
+					<!--Picturefill image display-->
+					<picture>
+						<source srcset="images/Secret_Lake.jpg" media="(max-width: 562px)">
+						<img class="contact_background" srcset="images/Desolation_Lake.jpg" alt="Utah Mountains">
+					</picture>
+			
 					<div class="contact-form">
 						<form ng-submit="contactForm()">					
 							<div class="name">
@@ -164,7 +174,7 @@
 								 <textarea id="message" ng-model="contact.message" placeholder="Message" required></textarea>
 							</div>
 							<div class="submit" ng-hide="inRecaptcha">
-								<input class="button" type="submit">
+								<input class="button" type="submit" value="Submit">
 							</div>
 							<div id="recaptcha-widget" ng-show="inRecaptcha">
 							</div>
@@ -188,10 +198,20 @@
 	
 	<script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
 	<script src="//cdn.jsdelivr.net/jquery.localscroll/1.4.0/jquery.localScroll.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js" async></script>
 	
-	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer>
+	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
     </script>
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-77345676-1', 'auto');
+	  ga('send', 'pageview');
+	</script>
 	
 
     <script src="js/app.js"></script>
