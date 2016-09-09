@@ -155,7 +155,7 @@ html, body {
 	padding: 0;
 }
 
-.pic_text h1.line_two {
+.pic_text h2.line_two {
 	position: absolute;
 	top: 250px;
 /*	left: 50%; */
@@ -169,7 +169,7 @@ html, body {
 	display: none;
 }
 
-.pic_text  h1.mobile_line_two {
+.pic_text  h2.mobile_line_two {
 	display: none;
 }
 
@@ -636,7 +636,7 @@ a:hover {
 		display: none;
 	}
 	
-	.pic_text h1.line_two {
+	.pic_text h2.line_two {
 		display: none;
 	}
 	
@@ -650,7 +650,7 @@ a:hover {
 		padding: 0;
 	}
 	
-	.pic_text h1.mobile_line_two {
+	.pic_text h2.mobile_line_two {
 		display: initial;
 		position: absolute;
 		top: 250px;
