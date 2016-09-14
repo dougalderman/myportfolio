@@ -289,9 +289,10 @@ a:hover {
 	padding-right: 10px;
 } 
 
-#about img {
+#about .doug-photo {
     float: left;
     padding-right: 10px;
+	width: 200px;
 }
 
 #contact .icons {
@@ -656,7 +657,6 @@ a:hover {
 		font-size: 1.2em;
 		color: rgba(58, 47, 79, 0.78);
 	}
-	
 }
 	
 @media (max-width: 600px)  {
@@ -664,5 +664,15 @@ a:hover {
 	.intro img.intro_background {
 		height: 338px;
 	}
+} 
 
+@media (max-width: 375px)  {
+	
+	#projects .project-title {
+		margin-bottom: 80px;
+	}
+	
+	#about .doug-photo {
+		width: 150px;
+	}
 } 
