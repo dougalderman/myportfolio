@@ -386,6 +386,10 @@ a:hover {
 	padding: 0;
 }
 
+#contact div.submit :hover {
+	cursor: pointer;
+}
+
 #contact #recaptcha-widget {
 	position: absolute;
 	top: 600px;
