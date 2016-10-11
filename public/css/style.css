@@ -687,6 +687,27 @@ a:hover {
 }
 
 @media screen and (max-width: 340px)  {
+	
+	.name_navbar {
+		font-size: 1.1em;
+	}
+	
+	.mobile_navbar_icon {
+		font-size: 2.1em;
+	}
+	
+	
+	.pic_text h1.mobile_line_one {
+		font-size: 1.6em;
+	}
+	
+	.pic_text h2.mobile_line_two {
+		font-size: 1em;
+	}
+	
+	#projects h4.title {
+		font-size: 1.4em;
+	}
 
     #contact .contact-form {
         width: 240px;
