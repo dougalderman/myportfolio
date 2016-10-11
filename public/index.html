@@ -195,7 +195,9 @@
 							<div id="recaptcha-widget" ng-show="inRecaptcha">
 							</div>
 							<div class="user-msg" ng-class="{green: formSuccess, red: !formSuccess}" ng-show="userMsg">
-								{{userMsg}}
+								<div class="inner-msg">
+									{{userMsg}}
+								</div>
 							</div>
 						</form>
 					</div>
