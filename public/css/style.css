@@ -600,7 +600,7 @@ a:hover {
 	}
 	
 	#contact .user-msg .inner-msg {
-		font-size: 0.7em;
+		height: 60px;
 	}
 	
 }
@@ -692,8 +692,4 @@ a:hover {
         width: 240px;
         margin-left: -120px;
     }
-	
-	#contact .user-msg .inner-msg {
-		height: 60px;
-	}
 }
