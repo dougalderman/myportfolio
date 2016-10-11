@@ -683,6 +683,8 @@ a:hover {
 	
 	#about .doug-photo {
 		width: 150px;
+		float: none;
+		margin-bottom: 20px;
 	}
 }
 
