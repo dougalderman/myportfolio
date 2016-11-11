@@ -330,6 +330,11 @@ a:hover {
 	margin-left: -350px;
 }
 
+#contact .contact-form form {
+    width: inherit;
+}
+
+
 #contact .contact-form div {
 	position: absolute;
 	padding-left: 5px;
@@ -338,48 +343,36 @@ a:hover {
 
 #contact div.name {
 	top: 0;
-/*	left: 33%; */
 	left: 0;
 	height: 50px;
-	width: 300px;
-/*	margin-left: -150px; */
+	width: 320px;
 }
 
 #contact div.phone {
 	top: 0;
-/* 	left: 67%; */
 	right: 0;
 	height: 50px;
-	width: 300px;
-/*	margin-left: -150px; */
+	width: 320px;
 }
 
 #contact div.email {
 	top: 120px;
-/*	left: 33%; */
 	left: 0;
 	height: 50px;
-	width: 300px;
-/*	margin-left: -150px; */
+	width: 320px;
 }
 
 #contact div.email-again {
 	top: 120px;
-/*	left: 67%; */
 	right: 0;
 	height: 50px;
-	width: 300px;
-/* 	margin-left: -150px; */
+	width: 320px;
 }
 
 #contact div.message {
-/* 	padding-top: 5px; */
 	top: 240px;
-/* 	left: 50%; */
 	left: 0;
 	height: 300px;
-/*	width: 674px; /* make it equal to width of 2 combined div's above + space in between 
-	margin-left: -337px; */
 	width: 700px;
 }
 
@@ -393,17 +386,23 @@ a:hover {
 	padding: 0;
 }
 
+#contact div.submit :hover {
+	cursor: pointer;
+}
+
 #contact #recaptcha-widget {
 	position: absolute;
 	top: 600px;
+	background: initial;
 }
 
 #contact #recaptcha-widget div {
 	padding-left: 0;
+	background: initial;
 }
 
 #contact #recaptcha-widget div div {
-	background: none; 
+	background: initial; 
 }
 
 #contact .button {
@@ -426,15 +425,26 @@ a:hover {
     font-size: 1em;
 }
 
-#contact .user-msg {
+#contact .contact-form .user-msg {
 	position: absolute;
-/*	top: 600px; */
 	top: 560px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-family: Arial;
 	font-size: 1em;
 	font-weight: bold;
 	left: 0;
+	right: 0;
 	padding: 5px;
+	background: initial;
+}
+
+#contact .user-msg .inner-msg {
+	background: #fff;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 5px;
 }
 
 #contact .green {
@@ -446,7 +456,7 @@ a:hover {
 }
 #contact input {
 	height: inherit;
-/*	width: inherit; */
+	width: inherit; 
 	background: inherit;
 	border: none;
 	color: #000;
@@ -461,7 +471,7 @@ a:hover {
 #contact textarea {
 	padding-top: 5px;
 	height: inherit;
-/*	width: inherit; */
+	width: inherit; 
 	background: inherit;
 	border: none;
 	color: #000;
@@ -501,7 +511,7 @@ a:hover {
 	color: green;
 }
 
-@media (max-width: 850px)  {
+@media screen and (max-width: 850px)  {
 	
 	h3 {
 		font-size: 2.6em;
@@ -541,40 +551,40 @@ a:hover {
 
 	#contact .contact-form {
 		height: 700px;
-		width: 300px;
-		margin-left: -150px;
+		width: 320px;
+		margin-left: -160px;
 	}
 
 	
 	#contact div.name {
 		height: 30px;
-		width: 300px;
+		width: inherit;
 	}
 
 	#contact div.phone {
 		top: 80px;
 		left: 0;
 		height: 30px;
-		width: 300px;
+		width: inherit;
 	}
 
 	#contact div.email {
 		top: 160px;
 		height: 30px;
-		width: 300px;
+		width: inherit;
 	}
 
 	#contact div.email-again {
 		top: 240px;
 		height: 30px;
-		width: 300px;
+		width: inherit;
 	}
 
 	#contact div.message {
 		top: 320px;
 		left: 0;
 		height: 230px;
-		width: 300px;
+		width: inherit;
 	}
 
 	#contact div.submit {
@@ -589,14 +599,17 @@ a:hover {
 		top: 280px;
 	}
 
-	#contact .user-msg {
-		top: 560px;
-		height: 50px;
+	#contact .contact-form .user-msg {
+		top: 580px;
+	}
+	
+	#contact .user-msg .inner-msg {
+		height: 60px;
 	}
 	
 }
 	
-@media (max-width: 700px)  {
+@media screen and (max-width: 700px)  {
 		
 	.name_navbar {
 		left: 20px;
@@ -659,14 +672,14 @@ a:hover {
 	}
 }
 	
-@media (max-width: 600px)  {
+@media screen and (max-width: 600px)  {
 	
 	.intro img.intro_background {
 		height: 338px;
 	}
 } 
 
-@media (max-width: 375px)  {
+@media screen and (max-width: 375px)  {
 	
 	#projects .project-title {
 		margin-bottom: 80px;
@@ -674,5 +687,36 @@ a:hover {
 	
 	#about .doug-photo {
 		width: 150px;
+		float: none;
+		margin-bottom: 20px;
 	}
-} 
+}
+
+@media screen and (max-width: 340px)  {
+	
+	.name_navbar {
+		font-size: 1.1em;
+	}
+	
+	.mobile_navbar_icon {
+		font-size: 2.1em;
+	}
+	
+	
+	.pic_text h1.mobile_line_one {
+		font-size: 1.6em;
+	}
+	
+	.pic_text h2.mobile_line_two {
+		font-size: 1em;
+	}
+	
+	#projects h4.title {
+		font-size: 1.4em;
+	}
+
+    #contact .contact-form {
+        width: 240px;
+        margin-left: -120px;
+    }
+}

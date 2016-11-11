@@ -93,10 +93,11 @@ angular.module('myPortfolio')
 		});
 		
 		if ($scope.currentRecaptchaId === 'recaptcha-widget') { // only do once for parent div 
-			var leftMargin = $('#' + $scope.currentRecaptchaId + ' div div').width() * -0.5;
+          
+            var leftMargin = $('#' + $scope.currentRecaptchaId + ' div').width() * -0.5;
 
 			$('#' + $scope.currentRecaptchaId).css({'left': '50%', 'margin-left': leftMargin + 'px'});  // Set left of absolutely positioned element to 50%. Set margin left to -0.5 of width. This will center the element. 
-		}
+        }
 		
 	}; 
 	
@@ -111,8 +112,7 @@ angular.module('myPortfolio')
 		leftMargin = $('.pic_text h2.line_two').width() * -0.5;
 		
 		$('.pic_text h2.line_two').css({'left': '50%', 'margin-left': leftMargin + 'px'});  // Set left of absolutely positioned element to 50%. Set margin left to -0.5 of width. This will center the element.
-		
-	});
+    });
 	
 	$scope.contact = {};
 	$scope.userMsg = '';
@@ -157,5 +157,5 @@ angular.module('myPortfolio')
 			$scope.formSuccess = false;
 			$scope.userMsg = 'There was a problem with this form';
 		}
-    }  
+    }
 });
