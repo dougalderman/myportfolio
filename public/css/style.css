@@ -115,19 +115,28 @@ html, body {
     font-size: 1.2em;
 	z-index: 10;
 	background: black;
-	width: 50%;
+	/* width: 50%; */
+	width: 150px;
 }
 
 #mobile_navbar ul {
 	margin: 0;
-	padding: 0;
+	padding: 5px 10px;
 }
 
 #mobile_navbar li {
 	display: block;
-	margin-top: 30px;
+/*	margin-top: 30px;
 	margin-bottom: 30px;
-	margin-left: 20px;
+	margin-left: 20px; */
+	height: 50px;
+	line-height: 50px
+}
+
+#mobile_navbar a {
+    display: block;
+    height: inherit;
+    line-height: inherit;
 }
 
 #projects-mobilenav, #about-mobilenav, #contact-mobilenav {
@@ -136,14 +145,18 @@ html, body {
 
 #projects-mobilenav:hover, #about-mobilenav:hover, #contact-mobilenav:hover {
 	color: crimson;
+	background: white;
+}
+
+#projects-mobilenav:active, #about-mobilenav:active, #contact-mobilenav:active {
+	color: crimson;
+	background: white;
 }
 
 #projects-mobilenav.highlight, #about-mobilenav.highlight, #contact-mobilenav.highlight {
 	color: crimson;
 	text-decoration: underline;
 }
-
-
 
 .pic_text h1.line_one {
 	position: absolute;
@@ -720,3 +733,32 @@ a:hover {
         margin-left: -120px;
     }
 }
+
+@media screen and (max-width: 280px)  {
+
+	.navbar {
+		height: 80px;
+	}
+
+	.name_navbar {
+		padding-right: 80px;
+		line-height: 40px;
+	}
+
+	#projects .project-title {
+		display: initial;
+	}
+
+	#projects .github-link {
+		padding-top: 20px;
+	}
+
+	#contact .icons {
+		height: 120px;
+	}
+
+	#contact .icons a {
+		display: block;
+		margin-bottom: 20px;
+}
+

@@ -1,5 +1,5 @@
 angular.module('myPortfolio')
-.controller('mainCtrl', function ($scope, mainService) {
+.controller('mainCtrl', function ($scope, mainService, RECAPTCHA_SITEKEY) {
 	
 	var resetCaptcha = function() {
 		var newId = 0;
@@ -85,9 +85,10 @@ angular.module('myPortfolio')
 	}
 	
 	var onLoadCallback = function() {
+		console.log('in onLoadCallback');
 		grecaptcha.render($scope.currentRecaptchaId, 
 		{
-			'sitekey' : '6LdOOAsAAAAAAEtjbq6sch1VWiMoBnX4bw4dIKfz',
+			'sitekey' : RECAPTCHA_SITEKEY,
 			'callback' : recaptchaCB,
 			'expired-callback': recaptchaExpired
 		});

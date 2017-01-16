@@ -9,7 +9,7 @@ module.exports = {
         console.log('req.body = ', req.body);
 
 		var newRecaptcha = new reCAPTCHA({
-  			siteKey:'6LdOOAsAAAAAAEtjbq6sch1VWiMoBnX4bw4dIKfz',
+  			siteKey:process.env.RECAPTCHA_SITE_KEY,
   			secretKey: process.env.RECAPTCHA_SECRET_KEY
 		});	
 		
