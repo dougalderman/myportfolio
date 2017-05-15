@@ -162,6 +162,7 @@ html, body {
 	padding: 0;
 	width: 100%;
 	text-align: center;
+    animation: slide-right 1s 0s 1 ease; */
 }
 
 .pic_text h2.line_two {
@@ -173,6 +174,7 @@ html, body {
 	text-align: center;
 	font-size: 1.4em;
 	color: rgba(58, 47, 79, 0.78);
+    animation: slide-left 1s 0s 1 ease; */
 }
 
 .pic_text  h1.mobile_line_one {
@@ -237,6 +239,31 @@ a:hover {
 	margin-top: 10px;
 	margin-right: 10px;
 }
+
+@keyframes slide-right {
+  from {
+    position: absolute;
+    right: 70px;
+  }
+
+  to {
+    position: absolute;
+    right: 0;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    position: absolute;
+    left: 70px;
+  }
+
+  to {
+    position: absolute;
+    left: 0;
+  }
+}
+
 
 #projects .project {
 	margin-top: 60px;
