@@ -105,15 +105,8 @@ angular.module('myPortfolio')
 	$(document).ready(function() {
 		
 		$.localScroll();
-		
-		var leftMargin = $('.pic_text h1.line_one').width() * -0.5;
-		
-		$('.pic_text h1.line_one').css({'left': '50%', 'margin-left': leftMargin + 'px'});  // Set left of absolutely positioned element to 50%. Set margin left to -0.5 of width. This will center the element. 
-		
-		leftMargin = $('.pic_text h2.line_two').width() * -0.5;
-		
-		$('.pic_text h2.line_two').css({'left': '50%', 'margin-left': leftMargin + 'px'});  // Set left of absolutely positioned element to 50%. Set margin left to -0.5 of width. This will center the element.
-    });
+	
+	});
 	
 	$scope.contact = {};
 	$scope.userMsg = '';
@@ -139,12 +132,7 @@ angular.module('myPortfolio')
     $scope.contactForm = function() {
         console.log('in contact form')
         console.log('$scope.contact', $scope.contact);
-		/* if ($scope.formSuccess) { // if already successully submitted form
-			console.log('multiple form submit');
-			$scope.userMsg = 'Already successfully submitted form';
-			return;
-		} */
-			
+					
         if ($scope.contact.email === $scope.contact.emailAgain) {
 			$scope.userMsg = '';
 			$scope.inRecaptcha = true;
