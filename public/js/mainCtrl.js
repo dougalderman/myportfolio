@@ -115,7 +115,7 @@ angular.module('myPortfolio')
 	$scope.inRecaptcha = false;
 	$scope.currentRecaptchaId = 'recaptcha-widget';
 	$scope.mobileNavbarSelected = false;
-    $scope.myInterval = 4000;
+    $scope.myInterval = 5000;
     $scope.active = 0;
     $scope.noWrapSlides = false;
     $scope.pictureQuizSlides = [
