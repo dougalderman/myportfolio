@@ -11,12 +11,16 @@
     <title>Doug Alderman Portfolio / Salt Lake City Web Developer / Angular, Node</title>
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    
     <link rel="stylesheet" href="css/style.css">
   
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <!--<script src="https://code.angularjs.org/1.4.8/angular-animate.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>-->
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
  
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/noframework.waypoints.min.js"></script>
 	<script src="bower_components/angular-waypoints/dist/angular-waypoints.min.js"></script>
@@ -61,7 +65,7 @@
 
 <body id="top" ng-controller="mainCtrl">
 	
-	<div class="container">
+	<div class="da-container">
     
 		<div id="fixed_navbar" class="navbar" ng-show="waypoints.fixedNav.down">
 			<div class="name_navbar">
@@ -133,8 +137,12 @@
 						<a class="github-link" href="https://github.com/dougalderman/angular-pictureQuiz" target="_blank"><img ng-src="images/octocat.jpg" height="50"></a>
 					</div>
 					<div class="project-left">
-						<img class="project_img" ng-src="images/Sample_Quiz_Screen.jpg">
-					</div>
+                        <div uib-carousel active="active" interval="myInterval" noWrap="noWrapSlides">
+                            <div uib-slide ng-repeat="slide in pictureQuizSlides track by slide.id" index="slide.id">
+                                <img class="project-img" ng-src="{{slide.image}}">
+                            </div>
+                        </div>
+				    </div>
 					<div class="project-right">
 						<p>This app is a online quiz with the option of using pictures as questions or answers. It allows for multiple choice, short answer, and true-false types questions. There are 3 text-only questions types, 3 picture question type, and one picture answer multiple choice, for a total of 7 question types. The app uses .json configuration files for all quiz information. This is strictly a front-end Angular app, that can be served as static HTML. Click <a href="http://dougalderman.github.io/angular-pictureQuiz/#/" target="_blank">here</a> for a demo.</p>
 					</div>
@@ -145,7 +153,7 @@
 						<a class="github-link" href="https://github.com/dougalderman/takethelead" target="_blank"><img ng-src="images/octocat.jpg" height="50"></a>
 					</div>
 					<div class="project-right">
-						<img class="project_img" ng-src="images/TaketheLead_Homepage.jpg">
+						<img class="project-img" ng-src="images/TaketheLead_Homepage.jpg">
 					</div>
 					<div class="project-left">
 						<p>This is a small business, primarily informational website with a contact form.  This mobile-friendly site is built using Gulp and HTML / CSS / Sass. Custom Angular and Node Javascript are mainly for the contact form. Third party libraries used in the site include Angular Waypoints for the navbar, Picturefill for the fixed background image, and Recaptcha for the contact form. Click <a href="http://104.131.74.125:7191" target="_blank">here</a> for a demo.</p>
@@ -157,7 +165,7 @@
 						<a class="github-link" href="https://github.com/dougalderman/surveys" target="_blank"><img ng-src="images/octocat.jpg" height="50"></a>
 					</div>
 					<div class="project-right">
-						<img class="project_img" ng-src="images/take_survey_screen.jpg">
+						<img class="project-img" ng-src="images/take_survey_screen.jpg">
 					</div>
 					<div class="project-left">
 						<p>The purpose of this individual project was to make an efficient process for DevMountain to create and deliver surveys, and manage survey results. This project utilized the full MEAN stack. Previously, surveys were done via Google Docs. The survey system I designed is a template-based survey administration system <span class="boldText">that has been implemented by DevMountain</span>. An administration main menu has selections for creating / modifying templates, sending surveys and viewing results. Students see links to requested surveys when they log in. They click on the link, take the survey, then return back to the previous screen. Mongo DB collections include templates, surveys, users, results, and topics. There were 29 server endpoints. Click <a href="http://104.131.74.125:6320" target="_blank">here</a> for a demo.</p>
@@ -170,7 +178,7 @@
 						<a class="github-link" href="https://github.com/DevMountain-Journey/journey-devmtn" target="_blank"><img ng-src="images/octocat.jpg" height="50"></a>
 					</div>
 					<div class="project-left">
-						<img class="project_img" ng-src="images/journey_devmtn_feed.jpg">
+						<img class="project-img" ng-src="images/journey_devmtn_feed.jpg">
 					</div>
 					<div class="project-right">
 						<p>The purpose of this project was to create a system to allow students to blog and communicate their feelings to other students. A difference from a typical blog is that students choose an emotion level from 1 through 10, with 10 being highest, and their emotion is tracked along with what they were working on at the time. This project utilized the full MEAN stack. I worked with a group of 2 other student developers. My responsibility was primarily back end and filtering logic. I handled passport local auth and DevMountain auth. I also wrote query logic for quick filters and advanced search. Click <a href="http://104.131.74.125:8004" target="_blank">here</a> for a demo.</p>

@@ -115,6 +115,21 @@ angular.module('myPortfolio')
 	$scope.inRecaptcha = false;
 	$scope.currentRecaptchaId = 'recaptcha-widget';
 	$scope.mobileNavbarSelected = false;
+    $scope.myInterval = 4000;
+    $scope.active = 0;
+    $scope.noWrapSlides = false;
+    $scope.pictureQuizSlides = [
+      {image: 'images/Picture_Quiz_Home_Screen.jpg',
+        id: 0},
+      {image: 'images/Picture_Quiz_Picture_Question_TF.jpg',
+        id: 1},
+      {image: 'images/Picture_Quiz_Picture_Answer.jpg', 
+        id: 2},
+      {image: 'images/Picture_Quiz_Picture_Question_MC.jpg',
+        id: 3},
+      {image: 'images/Picture_Quiz_Results_Screen.jpg', 
+        id: 4}
+    ]
 	
 	$scope.activateMobileNavbar = function() {
 		if ($scope.mobileNavbarSelected === false)
