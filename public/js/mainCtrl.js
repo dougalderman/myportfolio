@@ -82,7 +82,7 @@ angular.module('myPortfolio')
 			resetCaptcha();
 			$scope.userMsg = 'Problem verifying you\'re not a robot.'; 
         });
-	}
+	};
 	
 	var onLoadCallback = function() {
 		console.log('in onLoadCallback');
@@ -115,20 +115,72 @@ angular.module('myPortfolio')
 	$scope.inRecaptcha = false;
 	$scope.currentRecaptchaId = 'recaptcha-widget';
 	$scope.mobileNavbarSelected = false;
+    $scope.myInterval = 5000;
+    $scope.active = 0;
+    $scope.noWrapSlides = false;
+    $scope.pictureQuizSlides = [
+      {image: 'images/Picture_Quiz_Home_Screen.jpg',
+        id: 0},
+      {image: 'images/Picture_Quiz_Picture_Question_TF.jpg',
+        id: 1},
+      {image: 'images/Picture_Quiz_Picture_Answer.jpg', 
+        id: 2},
+      {image: 'images/Picture_Quiz_Picture_Question_MC.jpg',
+        id: 3},
+      {image: 'images/Picture_Quiz_Results_Screen.jpg', 
+        id: 4}
+    ];
+  
+    $scope.takeTheLeadSlides = [
+      {image: 'images/TaketheLead_Homepage.jpg',
+        id: 0},
+      {image: 'images/TaketheLead_About.jpg',
+        id: 1},
+      {image: 'images/TaketheLead_About_Trainer.jpg', 
+        id: 2},
+      {image: 'images/TaketheLead_Services.jpg',
+        id: 3},
+      {image: 'images/TaketheLead_Contact.jpg', 
+        id: 4}
+    ];
+  
+  $scope.devmtnSurveySlides = [
+      {image: 'images/Devmtn_Survey_Take_Survey.jpg',
+        id: 0},
+      {image: 'images/Devmtn_Survey_Take_Survey2.jpg',
+        id: 1},
+      {image: 'images/Devmtn_Survey_Create_Modify_Template.jpg', 
+        id: 2},
+      {image: 'images/Devmtn_Survey_Send_Survey.jpg',
+        id: 3},
+      {image: 'images/Devmtn_Survey_View_Results.jpg', 
+        id: 4}
+    ];
+  
+    $scope.devmtnJourneySlides = [
+      {image: 'images/Devmtn_Journey_Feed.jpg',
+        id: 0},
+      {image: 'images/Devmtn_Journey_New_Post.jpg',
+        id: 1},
+      {image: 'images/Devmtn_Journey_Standard_Feed.jpg',
+        id: 2},
+      {image: 'images/Devmtn_Journey_Date_Range_Picker.jpg', 
+        id: 3},
+      {image: 'images/Devmtn_Journey_Post_Detail_Page.jpg',
+        id: 4}
+    ];
 	
 	$scope.activateMobileNavbar = function() {
 		if ($scope.mobileNavbarSelected === false)
 			$scope.mobileNavbarSelected = true;
 		else // if Navbar is already active
 			$scope.mobileNavbarSelected = false;
-	}
+	};
 	
 	$scope.deactivateMobileNavbar = function() {
 		$scope.mobileNavbarSelected = false;
-	}
-
-	     
-     
+	};
+   
     $scope.contactForm = function() {
         console.log('in contact form')
         console.log('$scope.contact', $scope.contact);
@@ -146,5 +198,5 @@ angular.module('myPortfolio')
 			$scope.formSuccess = false;
 			$scope.userMsg = 'There was a problem with this form';
 		}
-    }
+    };
 });
